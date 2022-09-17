@@ -7,7 +7,7 @@ export const fetchRecipes = () => {
     return async (dispatch: Dispatch<RecipeAction>) => {
         try {
             dispatch({ type: RecipeActionTypes.FETCH_RECIPES });
-            const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
+            const response = await axios.get('http://localhost:3000/recipes');
             setTimeout(() => {
                 dispatch({ type: RecipeActionTypes.FETCH_RECIPES_SUCCESS, payload: response.data })
             }, 1000)
