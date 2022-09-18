@@ -7,7 +7,7 @@ export const fetchRecipes = () => {
     return async (dispatch: Dispatch<RecipeAction>) => {
         try {
             dispatch({ type: RecipeActionTypes.FETCH_RECIPES });
-            const response = await axios.get('http://localhost:3000/recipes');
+            const response = await axios.get('https://63270e8fba4a9c47532fdf45.mockapi.io/api/recipes');
             setTimeout(() => {
                 dispatch({ type: RecipeActionTypes.FETCH_RECIPES_SUCCESS, payload: response.data })
             }, 1000)
