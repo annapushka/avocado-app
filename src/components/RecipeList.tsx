@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { fetchRecipes } from '../store/action-creators/recipe';
-import Recipe from './Recipe';
+
+import Icon, { LoadingOutlined } from '@ant-design/icons';
+
+import RecipeReviewCard from './RecipeReviewCard';
 
 const RecipeList: React.FC = () => {
 
@@ -15,7 +18,7 @@ const RecipeList: React.FC = () => {
     }, []);
 
     if (loading) {
-        return <h1>Идет загрузка...</h1>
+        return <LoadingOutlined />
     }
 
     if (error) {
@@ -25,8 +28,7 @@ const RecipeList: React.FC = () => {
     return (
         <div className='recipeList'>
             {recipes.map(recipe =>
-                <div> {recipe.title}</div>
-                // <Recipe key={recipe.id} {...recipe} />
+                <RecipeReviewCard key={recipe.id} {...recipe} />
             )}
         </div>
     );

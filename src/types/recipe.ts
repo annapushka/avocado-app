@@ -1,3 +1,15 @@
+export interface RecipeTypes {
+    id: string;
+    img: string;
+    title: string;
+    time: number;
+    meal: string;
+    ingredients: string;
+    calories: number;
+    steps: string;
+    date: Date;
+}
+
 export interface RecipeState {
     recipes: any[];
     loading: boolean;
