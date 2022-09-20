@@ -1,9 +1,16 @@
 import React from 'react';
-import RecipeList from './components/RecipeList';
+
+import './assets/styles/style.css'
+import './assets/styles/normalize.css'
+
+import RecipeList from './assets/components/RecipeList';
+import Header from './assets/components/Header';
+
 
 const App = () => {
   return (
     <div>
+      <Header />
       <RecipeList />
     </div>
   );

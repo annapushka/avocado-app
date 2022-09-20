@@ -1,0 +1,27 @@
+.header {
+  background-color: #dea732;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+}
+.header_icon {
+  width: 2rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.header_icon:hover {
+  transform: scale(1.1);
+}
+
+.recipeList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 10vh;
+}/*# sourceMappingURL=style.css.map */

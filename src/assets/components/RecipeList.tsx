@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { useActions } from '../hooks/useActions';
-import { useTypedSelector } from '../hooks/useTypedSelector';
-import { fetchRecipes } from '../store/action-creators/recipe';
+import { useActions } from '../../hooks/useActions';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { fetchRecipes } from '../../store/action-creators/recipe';
 
 import Icon, { LoadingOutlined } from '@ant-design/icons';
 
 import RecipeReviewCard from './RecipeReviewCard';
+
 
 const RecipeList: React.FC = () => {
 
