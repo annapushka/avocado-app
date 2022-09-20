@@ -8,6 +8,7 @@ export interface RecipeTypes {
     calories: number;
     steps: string;
     date: Date;
+    author: string;
 }
 
 export interface RecipeState {

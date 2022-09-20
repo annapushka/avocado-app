@@ -45,9 +45,11 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function RecipeReviewCard(props: RecipeTypes) {
 
-    const { img, title, calories, ingredients, steps, time, meal, id, date } = props;
+    const { img, title, calories, ingredients, steps, time, meal, id, date, author } = props;
 
-    const formatedDate = date.toString();
+    const formatedDate = moment(date).format('LL').toString();
+    const titleToUpperCase = title[0].toUpperCase() + title.slice(0);
+    const autorFirstLetter = author[0].toUpperCase();
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
 
@@ -60,10 +62,10 @@ export default function RecipeReviewCard(props: RecipeTypes) {
             <CardHeader
                 avatar={
                     <Avatar aria-label="recipe" className={classes.avatar}>
-                        R
+                        {autorFirstLetter}
                     </Avatar>
                 }
-                title={title}
+                title={titleToUpperCase}
                 subheader={formatedDate}
             />
             <CardMedia
@@ -91,10 +93,11 @@ export default function RecipeReviewCard(props: RecipeTypes) {
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
-                    <Typography paragraph>Method:</Typography>
+                    <Typography paragraph color="textSecondary">ИНГРЕДИЕНТЫ</Typography>
                     <Typography paragraph variant="body2" color="textSecondary" component="p">
                         {ingredients}
                     </Typography>
+                    <Typography paragraph>ПОШАГОВЫЙ РЕЦЕПТ ПРИГОТОВЛЕНИЯ</Typography>
                     <Typography paragraph>
                         {steps}
                     </Typography>
