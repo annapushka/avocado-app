@@ -9,7 +9,7 @@ import Header from './assets/components/Header';
 
 const App = () => {
   return (
-    <div>
+    <div className='app'>
       <Header />
       <RecipeList />
     </div>

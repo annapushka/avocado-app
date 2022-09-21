@@ -1,0 +1,9 @@
+@mixin inputLight {
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    max-width: 150px;
+    padding: 0.6rem;
+    color: $txGray;
+    font-size: 1.1em;
+}
