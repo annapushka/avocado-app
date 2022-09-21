@@ -4,15 +4,33 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 3%;
     position: fixed;
+    gap: 2rem;
     width: 100vw;
     z-index: 1;
-    gap: 2rem;
-    padding-left: 8rem;
 
-    &_icon {
-        width: 2rem;
+    &__nav {
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            gap: 2rem;
+        }
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            color: $txBlack;
+            gap: 1rem;
+        }
+
+    }
+
+    &__icon {
+        height: 2rem;
         transition: 0.5s;
         cursor: pointer;
 
