@@ -1,9 +1,9 @@
 import React from 'react';
 
-import HomeIcon from '../img/home.png';
-import AddIcon from '../img/add.png';
+import HomeIcon from '../../img/home.png';
+import AddIcon from '../../img/add.png';
 
-import SearchBox from './SearchBox';
+import SearchBox from '../SearchBox/SearchBox';
 
 const Header: React.FC = () => {
     return (

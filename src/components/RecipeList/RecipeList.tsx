@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { fetchRecipes } from '../../store/action-creators/recipe';
+import Loading from '../Loading/Loading';
 
-import Icon, { LoadingOutlined } from '@ant-design/icons';
 
-import RecipeReviewCard from './RecipeReviewCard';
+import RecipeReviewCard from '../RecipeReviewCard/RecipeReviewCard';
 
 
 const RecipeList: React.FC = () => {
@@ -19,7 +19,7 @@ const RecipeList: React.FC = () => {
     }, []);
 
     if (loading) {
-        return <LoadingOutlined />
+        return <Loading />
     }
 
     if (error) {

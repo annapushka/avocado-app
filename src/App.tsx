@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './assets/styles/style.css'
-import './assets/styles/normalize.css'
+import './styles/style.css'
+import './styles/normalize.css'
 
-import RecipeList from './assets/components/RecipeList';
-import Header from './assets/components/Header';
+import RecipeList from './components/RecipeList/RecipeList';
+import Header from './components/Header/Header';
 
 
 const App = () => {

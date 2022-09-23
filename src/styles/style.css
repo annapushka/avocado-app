@@ -34,11 +34,19 @@
   transform: scale(1.1);
 }
 
+.recipeList, .loading {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 10vh;
+}
+
 .searchBox {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 .searchBox__input {
   outline: none;
@@ -49,14 +57,6 @@
   color: #a09289;
   font-size: 0.8rem;
   margin: 0;
-}
-
-.recipeList {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding-top: 10vh;
 }
 
 body {
