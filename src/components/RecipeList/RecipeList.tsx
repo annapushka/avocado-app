@@ -3,6 +3,7 @@ import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { fetchRecipes } from '../../store/action-creators/recipe';
 import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 
 
 import RecipeReviewCard from '../RecipeReviewCard/RecipeReviewCard';
@@ -23,7 +24,7 @@ const RecipeList: React.FC = () => {
     }
 
     if (error) {
-        return <h1>{error}</h1>
+        return <Error />
     }
 
     return (

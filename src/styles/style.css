@@ -59,6 +59,24 @@
   margin: 0;
 }
 
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100%;
+  background-color: #dea732;
+  text-align: center;
+}
+.error__img {
+  width: 10rem;
+}
+.error__text {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
 body {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
