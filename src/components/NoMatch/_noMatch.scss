@@ -1,0 +1,19 @@
+.noMatch {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: $orange;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    &__img {
+        max-width: 10rem;
+    }
+    &__text {
+        font-size: 1.5rem;
+        color:$txwhite;
+    }
+}

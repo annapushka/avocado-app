@@ -1,0 +1,11 @@
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8vh;
+    width: 100vw;
+    height: 92vh;
+    gap: 1rem;
+    background-color: $lightGray;
+}

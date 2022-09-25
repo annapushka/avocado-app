@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
+
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+
 import { fetchRecipes } from '../../store/action-creators/recipe';
+
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
 

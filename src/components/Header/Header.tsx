@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+    HashRouter as Router,
+    Routes,
+    Route,
+    Link
+} from "react-router-dom";
 
 import HomeIcon from '../../img/home.png';
 import AddIcon from '../../img/add.png';
@@ -11,10 +17,14 @@ const Header: React.FC = () => {
             <nav className="header__nav">
                 <ul>
                     <li>
-                        <img src={HomeIcon} alt="home" className="header__icon" />
+                        <Link to='/'>
+                            <img src={HomeIcon} alt="home" className="header__icon" />
+                        </Link>
                     </li>
                     <li>
-                        <img src={AddIcon} alt="add" className="header__icon" />
+                        <Link to='/addrecipe'>
+                            <img src={AddIcon} alt="add" className="header__icon" />
+                        </Link>
                     </li>
                 </ul>
             </nav>
