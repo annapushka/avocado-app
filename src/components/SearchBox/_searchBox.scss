@@ -1,10 +1,12 @@
-.searchBox{
+.searchBox {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     font-size: 1.1rem;
-    &__input{
+
+    &__input {
         @include inputLight;
         margin: 0;
+        min-width: 200px;
     }
 }

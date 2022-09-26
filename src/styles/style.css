@@ -52,11 +52,12 @@
   outline: none;
   border: none;
   border-radius: 1rem;
-  max-width: 150px;
   padding: 0.6rem;
   color: #a09289;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  min-width: 350px;
   margin: 0;
+  min-width: 200px;
 }
 
 .error {
@@ -107,6 +108,60 @@
   height: 92vh;
   gap: 1rem;
   background-color: #dcd8cf;
+}
+
+.addRecipe {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100vw;
+  background-color: #dcd8cf;
+}
+
+.recipeForm {
+  margin-top: 8rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+  height: 92vh;
+  padding-left: 2%;
+}
+.recipeForm__input {
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.6rem;
+  color: #a09289;
+  font-size: 0.9rem;
+  min-width: 350px;
+}
+.recipeForm__textarea {
+  height: 4rem;
+  resize: vertical;
+}
+.recipeForm__select {
+  min-width: 370px;
+}
+.recipeForm__button {
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.6rem;
+  color: #a09289;
+  font-size: 0.9rem;
+  min-width: 350px;
+  min-width: 370px;
+  color: #fff;
+  background-color: #dea732;
+  transition: ease-in-out 0.3s;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+.recipeForm__button:hover {
+  transform: scale(1.03);
 }
 
 body {
