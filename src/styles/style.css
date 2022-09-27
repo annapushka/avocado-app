@@ -145,6 +145,9 @@
 .recipeForm__select {
   min-width: 370px;
 }
+.recipeForm__data {
+  background: none;
+}
 .recipeForm__button {
   outline: none;
   border: none;

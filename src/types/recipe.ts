@@ -1,5 +1,5 @@
 export interface RecipeTypes {
-    id: string;
+    id?: string;
     img: string;
     title: string;
     time: number;
@@ -21,6 +21,8 @@ export enum RecipeActionTypes {
     FETCH_RECIPES = "FETCH_RECIPES",
     FETCH_RECIPES_SUCCESS = "FETCH_RECIPES_SUCCESS",
     FETCH_RECIPES_ERROR = "FETCH_RECIPES_ERROR",
+    POST_RECIPE = "POST_RECIPE",
+    POST_RECIPE_ERROR = "POST_RECIPE_ERROR",
 }
 
 interface FetchRecipesAction {
@@ -37,4 +39,13 @@ interface FetchRecipesErrorAction {
     payload: string;
 }
 
-export type RecipeAction = FetchRecipesAction | FetchRecipesSuccessAction | FetchRecipesErrorAction;
+interface PostRecipeAction {
+    type: RecipeActionTypes.POST_RECIPE;
+}
+
+interface PostRecipeErrorAction {
+    type: RecipeActionTypes.POST_RECIPE_ERROR;
+    payload: string;
+}
+
+export type RecipeAction = FetchRecipesAction | FetchRecipesSuccessAction | FetchRecipesErrorAction | PostRecipeAction | PostRecipeErrorAction;

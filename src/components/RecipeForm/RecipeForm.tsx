@@ -1,11 +1,17 @@
 import React from 'react';
+import { useActions } from '../../hooks/useActions';
 
+import { addRecipe } from '../../store/action-creators/recipe';
 
 const moment = require('moment');
 
 
 const RecipeForm: React.FC = () => {
     const date = moment(Date.now()).format('LL').toString();
+
+    const { addRecipe } = useActions();
+
+
     return (
         <form className='recipeForm'>
             <input className='recipeForm__input' name='author' placeholder='Ваше имя' type="text" required />
@@ -20,7 +26,7 @@ const RecipeForm: React.FC = () => {
                 <option value="Ужин">Ужин</option>
             </select>
             <input className='recipeForm__input' name='img' placeholder='Ссылка на фотографию блюда' type="url" required />
-            <input className='recipeForm__input' name='time' type="text" value={date} />
+            <input className='recipeForm__input recipeForm__data' name='time' type="text" value={date} />
             <button type="submit" className="recipeForm__button">Отправить рецепт</button>
         </form>
     );
