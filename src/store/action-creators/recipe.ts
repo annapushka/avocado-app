@@ -10,9 +10,7 @@ export const fetchRecipes = () => {
         try {
             dispatch({ type: RecipeActionTypes.FETCH_RECIPES });
             const response = await axios.get(url);
-            setTimeout(() => {
-                dispatch({ type: RecipeActionTypes.FETCH_RECIPES_SUCCESS, payload: response.data })
-            }, 1000)
+            dispatch({ type: RecipeActionTypes.FETCH_RECIPES_SUCCESS, payload: response.data })
         } catch (e) {
             dispatch({
                 type: RecipeActionTypes.FETCH_RECIPES_ERROR,

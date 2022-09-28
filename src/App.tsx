@@ -11,6 +11,7 @@ import './styles/normalize.css'
 
 import RecipeList from './components/RecipeList/RecipeList';
 import Home from './components/Home/Home';
+import Header from './components/Header/Header';
 import NoMatch from './components/NoMatch/NoMatch';
 import AddRecipe from './components/AddRecipe/AddRecipe';
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="app">
+        <Header />
         <Routes>
           <Route path='/recipes' element={<RecipeList />} />
           <Route path='/addrecipe' element={<AddRecipe />} />
