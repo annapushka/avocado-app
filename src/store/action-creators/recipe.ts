@@ -25,7 +25,7 @@ export const addRecipe = (newRecipe: RecipeTypes) => {
     return async (dispatch: Dispatch<RecipeAction>) => {
         try {
             dispatch({ type: RecipeActionTypes.POST_RECIPE });
-            const resp = await axios.post('https://jsonplaceholder.typicode.com/posts', newRecipe);
+            const resp = await axios.post(url, newRecipe);
             console.log(resp.data);
         } catch (e) {
             dispatch({

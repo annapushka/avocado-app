@@ -10,9 +10,10 @@ import Error from '../Error/Error';
 
 
 import RecipeReviewCard from '../RecipeReviewCard/RecipeReviewCard';
+import SearchBox from '../SearchBox/SearchBox';
 
 
-const RecipeList: React.FC = () => {
+const RecipeList: React.FC = (props) => {
 
     const { error, loading, recipes } = useTypedSelector(state => state.recipe);
     const { fetchRecipes } = useActions();
@@ -31,11 +32,15 @@ const RecipeList: React.FC = () => {
     }
 
     return (
-        <div className='recipeList'>
-            {recipes.map(recipe =>
-                <RecipeReviewCard key={recipe.id} {...recipe} />
-            )}
-        </div>
+        <>
+            <SearchBox />
+            <div className='recipeList'>
+                {recipes.filter(recipe => recipe.meal === props).map(recipe =>
+                    <RecipeReviewCard key={recipe.id} {...recipe} />
+                )}
+            </div>
+        </>
+
     );
 };
 

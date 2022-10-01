@@ -3,15 +3,13 @@ import RecipeBox from '../RecipeBox/RecipeBox';
 import RecipeList from '../RecipeList/RecipeList';
 
 const Home: React.FC = () => {
+
     return (
-        <>
-            <div className='home'>
-                <RecipeBox />
-                <RecipeBox />
-                <RecipeBox />
-            </div>
-            <RecipeList />
-        </>
+        <div className='home'>
+            <RecipeBox />
+            <RecipeBox />
+            <RecipeBox />
+        </div>
     );
 };
 

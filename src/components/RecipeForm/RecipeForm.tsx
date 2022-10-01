@@ -37,9 +37,9 @@ const RecipeForm: React.FC = () => {
             <input className='recipeForm__input' name='calories' placeholder='Количество калорий, ккал' type="number" required onChange={handleChangeData} />
             <textarea className='recipeForm__input recipeForm__textarea' name='ingredients' placeholder='Ингридиенты' required onChange={handleChangeData} />
             <textarea className='recipeForm__input recipeForm__textarea' name='steps' placeholder='Пошаговый рецепт приготовления' required onChange={handleChangeData} />
-            <select className='recipeForm__input recipeForm__select' onChange={handleChangeData}>
+            <select className='recipeForm__input recipeForm__select' name='meal' onChange={handleChangeData}>
                 <option value="Завтрак">Завтрак</option>
-                <option value="Обед" selected>Обед</option>
+                <option value="Обед" selected >Обед</option>
                 <option value="Ужин">Ужин</option>
             </select>
             <input className='recipeForm__input' name='img' placeholder='Ссылка на фотографию блюда' type="url" required onChange={handleChangeData} />

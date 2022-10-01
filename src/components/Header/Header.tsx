@@ -28,8 +28,6 @@ const Header: React.FC = () => {
                     </li>
                 </ul>
             </nav>
-            <SearchBox />
-
         </div>
     );
 };

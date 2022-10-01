@@ -5,7 +5,9 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 
-import Breakfast from '../../img/breakfast.jpg'
+import Breakfast from '../../img/breakfast.jpg';
+import Lunch from '../../img/lunch.jpg';
+import Supper from '../../img/supper.jpg';
 
 
 const useStyles = makeStyles((theme: Theme) =>

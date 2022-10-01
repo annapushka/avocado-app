@@ -5,7 +5,7 @@
     justify-content: flex-start;
     align-items: center;
     position: fixed;
-    gap: 2rem;
+    gap: 1rem;
     width: 100vw;
     z-index: 1;
 
@@ -30,7 +30,7 @@
     }
 
     &__icon {
-        height: 2rem;
+        height: 1.8rem;
         transition: 0.5s;
         cursor: pointer;
 
