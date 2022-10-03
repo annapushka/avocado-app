@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Dispatch } from "redux"
-import { RecipeAction, RecipeActionTypes, RecipeTypes } from "../../types/recipe"
+import { RecipeAction, RecipeActionTypes } from "../../types/recipe"
 
 
 const url: string = 'https://63270e8fba4a9c47532fdf45.mockapi.io/api/recipes';
@@ -21,12 +21,11 @@ export const fetchRecipes = () => {
     }
 }
 
-export const addRecipe = (newRecipe: RecipeTypes) => {
+export const addRecipe = (newRecipe: any) => {
     return async (dispatch: Dispatch<RecipeAction>) => {
         try {
             dispatch({ type: RecipeActionTypes.POST_RECIPE });
             const resp = await axios.post(url, newRecipe);
-            console.log(resp.data);
         } catch (e) {
             dispatch({
                 type: RecipeActionTypes.POST_RECIPE_ERROR,

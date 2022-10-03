@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useActions } from '../../hooks/useActions';
 
 import { addRecipe } from '../../store/action-creators/recipe';
+import { RecipeTypes } from '../../types/recipe';
 
 const moment = require('moment');
 
@@ -11,7 +12,6 @@ const RecipeForm: React.FC = () => {
     const date = moment(Date.now()).format('LL').toString();
 
     const [newRecipe, setNewRecipe] = useState([]);
-
 
     const { addRecipe } = useActions();
 
@@ -24,7 +24,6 @@ const RecipeForm: React.FC = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(newRecipe);
         addRecipe(newRecipe);
     }
 

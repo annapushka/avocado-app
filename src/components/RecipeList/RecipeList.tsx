@@ -12,11 +12,16 @@ import Error from '../Error/Error';
 import RecipeReviewCard from '../RecipeReviewCard/RecipeReviewCard';
 import SearchBox from '../SearchBox/SearchBox';
 
+interface Props {
+    meal: string;
+}
 
-const RecipeList: React.FC = (props) => {
+
+const RecipeList = (props: Props) => {
 
     const { error, loading, recipes } = useTypedSelector(state => state.recipe);
     const { fetchRecipes } = useActions();
+
 
 
     useEffect(() => {
@@ -35,7 +40,7 @@ const RecipeList: React.FC = (props) => {
         <>
             <SearchBox />
             <div className='recipeList'>
-                {recipes.filter(recipe => recipe.meal === props).map(recipe =>
+                {recipes.filter(recipe => recipe.meal === props.meal).map(recipe =>
                     <RecipeReviewCard key={recipe.id} {...recipe} />
                 )}
             </div>
