@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RecipeBox from '../RecipeBox/RecipeBox';
 import RecipeList from '../RecipeList/RecipeList';
 import Breakfast from '../../img/breakfast.jpg';
@@ -7,12 +7,25 @@ import Supper from '../../img/supper.jpg';
 
 const Home: React.FC = () => {
 
+    const [recipeList, setList] = useState(false);
+    const [chosenMeal, setChosenMeal] = useState('');
+
+    const handleClick = (e: any) => {
+        setChosenMeal(e.target.meal);
+        setList(prevState => !prevState);
+    }
+
     return (
-        <div className='home'>
-            <RecipeBox meal='Завтрак' img={Breakfast} />
-            <RecipeBox meal='Обед' img={Lunch} />
-            <RecipeBox meal='Ужин' img={Supper} />
-        </div>
+        <> {!recipeList ? (
+            <div className='home'>
+                <RecipeBox meal='Завтрак' img={Breakfast} onClick={handleClick} />
+                <RecipeBox meal='Обед' img={Lunch} onClick={handleClick} />
+                <RecipeBox meal='Ужин' img={Supper} onClick={handleClick} />
+            </div>
+        ) : (
+            <RecipeList meal={chosenMeal} />
+        )}
+        </>
     );
 };
 

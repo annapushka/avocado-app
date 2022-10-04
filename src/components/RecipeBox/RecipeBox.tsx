@@ -10,6 +10,7 @@ import RecipeList from '../RecipeList/RecipeList';
 interface Props {
     meal: string;
     img: string;
+    onClick: (e: any) => void;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         media: {
             paddingTop: '56.25%', // 16:9
+            cursor: 'pointer',
         },
     }),
 );
@@ -27,23 +29,15 @@ export default function RecipeBox(props: Props) {
 
     const classes = useStyles();
 
-    const [recipeList, setList] = useState(false);
-
     return (
-        <>
-            {recipeList ? (< Card className={classes.root} >
-                <CardHeader
-                    title={props.meal}
-                />
-                <CardMedia
-                    className={classes.media}
-                    image={props.img}
-                />
-            </ Card>
-            ) : (
-                <RecipeList meal={props.meal} />
-            )}
-        </>
-
+        < Card className={classes.root} >
+            <CardHeader
+                title={props.meal}
+            />
+            <CardMedia
+                className={classes.media}
+                image={props.img}
+            />
+        </ Card>
     );
 }

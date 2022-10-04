@@ -12,11 +12,15 @@ const RecipeForm: React.FC = () => {
     const date = moment(Date.now()).format('LL').toString();
 
     const [newRecipe, setNewRecipe] = useState([]);
+    const [chosenMeal, setChosenMeal] = useState('Обед');
 
     const { addRecipe } = useActions();
 
 
-    const handleChangeData = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleChangeData = (e: React.ChangeEvent<HTMLInputElement>
+        | React.ChangeEvent<HTMLSelectElement>
+        | React.ChangeEvent<HTMLTextAreaElement>) => {
+        if (e.target.type === 'select') { setChosenMeal(e.target.value) }
         const name = e.target.name;
         const info = e.target.value;
         setNewRecipe({ ...newRecipe, [name]: info });
@@ -36,9 +40,9 @@ const RecipeForm: React.FC = () => {
             <input className='recipeForm__input' name='calories' placeholder='Количество калорий, ккал' type="number" required onChange={handleChangeData} />
             <textarea className='recipeForm__input recipeForm__textarea' name='ingredients' placeholder='Ингридиенты' required onChange={handleChangeData} />
             <textarea className='recipeForm__input recipeForm__textarea' name='steps' placeholder='Пошаговый рецепт приготовления' required onChange={handleChangeData} />
-            <select className='recipeForm__input recipeForm__select' name='meal' onChange={handleChangeData}>
+            <select className='recipeForm__input recipeForm__select' name='meal' onChange={handleChangeData} value={chosenMeal}>
                 <option value="Завтрак">Завтрак</option>
-                <option value="Обед" selected >Обед</option>
+                <option value="Обед">Обед</option>
                 <option value="Ужин">Ужин</option>
             </select>
             <input className='recipeForm__input' name='img' placeholder='Ссылка на фотографию блюда' type="url" required onChange={handleChangeData} />
