@@ -39,7 +39,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  padding-top: 10vh;
+  padding-top: 2rem;
 }
 
 .recipeList-wrapper {
@@ -48,6 +48,7 @@
 
 .searchBox {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   font-size: 1.1rem;
@@ -155,7 +156,7 @@
 .recipeForm__select {
   min-width: 370px;
 }
-.recipeForm__data {
+.recipeForm__date {
   background: none;
 }
 .recipeForm__button {

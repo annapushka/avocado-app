@@ -20,8 +20,7 @@ const moment = require('moment');
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            maxWidth: 345,
-            minWidth: 200,
+            width: 300,
         },
         media: {
             height: 0,

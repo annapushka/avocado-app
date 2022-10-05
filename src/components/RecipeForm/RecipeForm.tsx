@@ -12,7 +12,7 @@ const RecipeForm: React.FC = () => {
     const date = moment(Date.now()).format('LL').toString();
 
     const [newRecipe, setNewRecipe] = useState([]);
-    const [chosenMeal, setChosenMeal] = useState('Обед');
+    const [chosenMeal, setChosenMeal] = useState('');
 
     const { addRecipe } = useActions();
 
@@ -20,10 +20,11 @@ const RecipeForm: React.FC = () => {
     const handleChangeData = (e: React.ChangeEvent<HTMLInputElement>
         | React.ChangeEvent<HTMLSelectElement>
         | React.ChangeEvent<HTMLTextAreaElement>) => {
-        if (e.target.type === 'select') { setChosenMeal(e.target.value) }
+        if (e.target.name === 'meal') { setChosenMeal(e.target.value) }
         const name = e.target.name;
-        const info = e.target.value;
+        const info = (e.target.name === 'date') ? Date.now() : e.target.value;
         setNewRecipe({ ...newRecipe, [name]: info });
+        console.log(newRecipe);
     }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -41,12 +42,13 @@ const RecipeForm: React.FC = () => {
             <textarea className='recipeForm__input recipeForm__textarea' name='ingredients' placeholder='Ингридиенты' required onChange={handleChangeData} />
             <textarea className='recipeForm__input recipeForm__textarea' name='steps' placeholder='Пошаговый рецепт приготовления' required onChange={handleChangeData} />
             <select className='recipeForm__input recipeForm__select' name='meal' onChange={handleChangeData} value={chosenMeal}>
+                <option value="Категория">Категория</option>
                 <option value="Завтрак">Завтрак</option>
                 <option value="Обед">Обед</option>
                 <option value="Ужин">Ужин</option>
             </select>
             <input className='recipeForm__input' name='img' placeholder='Ссылка на фотографию блюда' type="url" required onChange={handleChangeData} />
-            <input className='recipeForm__input recipeForm__data' name='time' type="text" value={date} onChange={handleChangeData} />
+            <input className='recipeForm__input recipeForm__date' name='date' type="text" value={date} onChange={handleChangeData} />
             <button type="submit" className="recipeForm__button">Отправить рецепт</button>
         </form>
     );
