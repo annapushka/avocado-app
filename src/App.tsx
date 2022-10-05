@@ -22,6 +22,9 @@ const App: React.FC = () => {
       <div className="app">
         <Header />
         <Routes>
+          <Route path='/breakfast' element={<RecipeList meal='Завтрак' />} />
+          <Route path='/lunch' element={<RecipeList meal='Обед' />} />
+          <Route path='/supper' element={<RecipeList meal='Ужин' />} />
           <Route path='/addrecipe' element={<AddRecipe />} />
           <Route path='/' element={<Home />} />
           <Route path="*" element={<NoMatch />} />

@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
 import RecipeBox from '../RecipeBox/RecipeBox';
-import RecipeList from '../RecipeList/RecipeList';
 import Breakfast from '../../img/breakfast.jpg';
 import Lunch from '../../img/lunch.jpg';
 import Supper from '../../img/supper.jpg';
 
+import {
+    HashRouter as Router,
+    Routes,
+    Route,
+    Link
+} from "react-router-dom";
+
 const Home: React.FC = () => {
 
-    const [recipeList, setList] = useState(false);
-    const [chosenMeal, setChosenMeal] = useState('');
-
-    const handleClick = (e: any) => {
-        setChosenMeal(e.target.meal);
-        setList(prevState => !prevState);
-    }
-
     return (
-        <> {!recipeList ? (
-            <div className='home'>
-                <RecipeBox meal='Завтрак' img={Breakfast} onClick={handleClick} />
-                <RecipeBox meal='Обед' img={Lunch} onClick={handleClick} />
-                <RecipeBox meal='Ужин' img={Supper} onClick={handleClick} />
-            </div>
-        ) : (
-            <RecipeList meal={chosenMeal} />
-        )}
-        </>
+        <div className='home'>
+            <Link to='/breakfast'>
+                <RecipeBox meal='Завтрак' img={Breakfast} value='breakfast' />
+            </Link>
+            <Link to='lunch'>
+                <RecipeBox meal='Обед' img={Lunch} value='lunch' />
+            </Link>
+            <Link to='supper'>
+                <RecipeBox meal='Ужин' img={Supper} value='supper' />
+            </Link>
+        </div >
     );
 };
 

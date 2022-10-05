@@ -42,6 +42,10 @@
   padding-top: 10vh;
 }
 
+.recipeList-wrapper {
+  margin-top: 6rem;
+}
+
 .searchBox {
   display: flex;
   align-items: center;
@@ -56,6 +60,7 @@
   color: #a09289;
   font-size: 0.9rem;
   min-width: 350px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   margin: 0;
   min-width: 200px;
 }
@@ -109,10 +114,14 @@
   gap: 1rem;
   background-color: #dcd8cf;
 }
+.home a {
+  text-decoration: none;
+  flex: 1 1 260px;
+}
 
 .addRecipe {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   width: 100vw;
   background-color: #dcd8cf;
@@ -137,6 +146,7 @@
   color: #a09289;
   font-size: 0.9rem;
   min-width: 350px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 .recipeForm__textarea {
   height: 4rem;
@@ -156,6 +166,7 @@
   color: #a09289;
   font-size: 0.9rem;
   min-width: 350px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   min-width: 370px;
   color: #fff;
   background-color: #dea732;

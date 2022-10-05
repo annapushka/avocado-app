@@ -37,14 +37,14 @@ const RecipeList = (props: Props) => {
     }
 
     return (
-        <>
+        <div className='recipeList-wrapper'>
             <SearchBox />
             <div className='recipeList'>
                 {recipes.filter(recipe => recipe.meal === props.meal).map(recipe =>
                     <RecipeReviewCard key={recipe.id} {...recipe} />
                 )}
             </div>
-        </>
+        </div>
 
     );
 };
