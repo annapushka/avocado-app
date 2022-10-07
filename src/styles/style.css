@@ -42,7 +42,7 @@
   padding-top: 2rem;
 }
 
-.recipeList-wrapper {
+.recipeList-wrapper, .loading {
   margin-top: 6rem;
 }
 
@@ -187,4 +187,6 @@ body {
 .app {
   display: flex;
   justify-content: center;
+  background-color: #dcd8cf;
+  height: 100vh;
 }/*# sourceMappingURL=style.css.map */
