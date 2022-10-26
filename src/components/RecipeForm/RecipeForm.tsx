@@ -10,8 +10,8 @@ const moment = require('moment');
 const RecipeForm: React.FC = () => {
 
     const date = moment(Date.now()).format('LL').toString();
-
-    const [newRecipe, setNewRecipe] = useState<RecipeTypes>([]);
+    const objRecepi: RecipeTypes = [];
+    const [newRecipe, setNewRecipe] = useState(objRecepi);
     const [chosenMeal, setChosenMeal] = useState('');
 
     const { addRecipe } = useActions();

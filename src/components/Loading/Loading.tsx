@@ -1,14 +1,14 @@
 import React from 'react';
 import RecipeSkeleton from '../RecipeSkeleton/RecipeSkeleton';
 
-const sceletonArr: any[] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+const sceletonArr: number[] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
 
 function Loading() {
 
     return (
         <div className="loading">
-            {sceletonArr.map(sceleton => <RecipeSkeleton />)}
+            {sceletonArr.map((sceleton, index) => <RecipeSkeleton key={index} />)}
         </div>
     );
 }
