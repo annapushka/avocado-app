@@ -182,11 +182,11 @@
 body {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
+  box-sizing: border-box;
 }
 
 .app {
   display: flex;
   justify-content: center;
   background-color: #dcd8cf;
-  height: 100vh;
 }/*# sourceMappingURL=style.css.map */
