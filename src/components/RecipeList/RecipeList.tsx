@@ -19,7 +19,7 @@ interface Props {
 
 const RecipeList = (props: Props) => {
 
-    const { error, loading, recipes } = useTypedSelector(state => state.recipe);
+    const { error, loading, recipes, filter } = useTypedSelector(state => state.recipe);
     const { fetchRecipes } = useActions();
 
 
@@ -40,9 +40,14 @@ const RecipeList = (props: Props) => {
         <div className='recipeList-wrapper'>
             <SearchBox />
             <div className='recipeList'>
-                {recipes.filter(recipe => recipe.meal === props.meal).map(recipe =>
-                    <RecipeReviewCard key={recipe.id} {...recipe} />
-                )}
+                {recipes.filter(recipe => recipe.meal === props.meal)
+                    .filter(recipe => {
+                        if (filter === '') { return recipe }
+                        else if (recipe.title.toLowerCase().includes(filter.toLowerCase())) { return recipe }
+                    })
+                    .map(recipe =>
+                        <RecipeReviewCard key={recipe.id} {...recipe} />
+                    )}
             </div>
         </div>
 

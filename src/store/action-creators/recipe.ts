@@ -36,3 +36,12 @@ export const addRecipe = (newRecipe: RecipeTypes) => {
 
     }
 }
+
+export const filterRecipe = (word: string) => {
+    return (dispatch: Dispatch<RecipeAction>) => {
+        dispatch({
+            type: RecipeActionTypes.FILTER,
+            payload: word
+        });
+    }
+}

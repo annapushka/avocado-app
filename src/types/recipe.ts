@@ -15,6 +15,7 @@ export interface RecipeState {
     recipes: any[];
     loading: boolean;
     error: null | string;
+    filter: string;
 }
 
 export enum RecipeActionTypes {
@@ -23,6 +24,7 @@ export enum RecipeActionTypes {
     FETCH_RECIPES_ERROR = "FETCH_RECIPES_ERROR",
     POST_RECIPE = "POST_RECIPE",
     POST_RECIPE_ERROR = "POST_RECIPE_ERROR",
+    FILTER = "FILTER",
 }
 
 interface FetchRecipesAction {
@@ -48,4 +50,14 @@ interface PostRecipeErrorAction {
     payload: string;
 }
 
-export type RecipeAction = FetchRecipesAction | FetchRecipesSuccessAction | FetchRecipesErrorAction | PostRecipeAction | PostRecipeErrorAction;
+interface FilterAction {
+    type: RecipeActionTypes.FILTER;
+    payload: string;
+}
+
+export type RecipeAction = FetchRecipesAction
+    | FetchRecipesSuccessAction
+    | FetchRecipesErrorAction
+    | PostRecipeAction
+    | PostRecipeErrorAction
+    | FilterAction;
