@@ -9,6 +9,10 @@
     padding-left: 2%;
     height: 80%;
 
+    @media screen and (max-width: 420px) {
+        max-width: 90vw;
+    }
+
     &__input {
         @include inputLight;
     }
@@ -19,7 +23,6 @@
     }
 
     &__select {
-        min-width: 370px;
     }
 
     &__date {
@@ -28,12 +31,12 @@
 
     &__button {
         @include inputLight;
-        min-width: 370px;
         color: $white;
         background-color: $orange;
         transition: ease-in-out 0.3s;
         font-size: 1.1em;
         cursor: pointer;
+        margin-bottom: 10%;
 
         &:hover {
             transform: scale(1.03);

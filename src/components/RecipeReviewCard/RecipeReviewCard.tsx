@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -16,6 +16,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { RecipeTypes } from '../../types/recipe';
 
 const moment = require('moment');
+const classNames = require('classnames');
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -50,10 +51,19 @@ export default function RecipeReviewCard(props: RecipeTypes) {
     const titleToUpperCase = title[0].toUpperCase() + title.slice(1);
     const autorFirstLetter = author[0].toUpperCase();
     const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
+    const [expanded, setExpanded] = useState(false);
+    const [favorite, setFavorite] = useState(false);
+
+    let favoriteClass = classNames({
+        'liked': favorite,
+    });
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
+    };
+
+    const handlerFavoriteClick = () => {
+        setFavorite(!favorite);
     };
 
     return (
@@ -79,8 +89,11 @@ export default function RecipeReviewCard(props: RecipeTypes) {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
+                <IconButton
+                    aria-label="add to favorites"
+                    onClick={handlerFavoriteClick}
+                >
+                    <FavoriteIcon className={favoriteClass} />
                 </IconButton>
                 <IconButton aria-label="share">
                     <ShareIcon />

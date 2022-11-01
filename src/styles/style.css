@@ -3,12 +3,21 @@
   background-color: #dea732;
   height: 8vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   gap: 1rem;
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
   z-index: 1;
+}
+.header__favorite-filter {
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+}
+.header__favorite-like {
+  color: #fff;
 }
 .header__nav ul {
   display: flex;
@@ -61,8 +70,10 @@
   padding: 0.6rem;
   color: #a09289;
   font-size: 0.9rem;
-  min-width: 350px;
+  width: 350px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  max-width: 90%;
+  box-sizing: border-box;
   margin: 0;
   min-width: 200px;
 }
@@ -141,6 +152,11 @@
   padding-left: 2%;
   height: 80%;
 }
+@media screen and (max-width: 420px) {
+  .recipeForm {
+    max-width: 90vw;
+  }
+}
 .recipeForm__input {
   outline: none;
   border: none;
@@ -148,15 +164,14 @@
   padding: 0.6rem;
   color: #a09289;
   font-size: 0.9rem;
-  min-width: 350px;
+  width: 350px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  max-width: 90%;
+  box-sizing: border-box;
 }
 .recipeForm__textarea {
   height: 4rem;
   resize: vertical;
-}
-.recipeForm__select {
-  min-width: 370px;
 }
 .recipeForm__date {
   background: none;
@@ -168,28 +183,38 @@
   padding: 0.6rem;
   color: #a09289;
   font-size: 0.9rem;
-  min-width: 350px;
+  width: 350px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-  min-width: 370px;
+  max-width: 90%;
+  box-sizing: border-box;
   color: #fff;
   background-color: #dea732;
   transition: ease-in-out 0.3s;
   font-size: 1.1em;
   cursor: pointer;
+  margin-bottom: 10%;
 }
 .recipeForm__button:hover {
   transform: scale(1.03);
 }
 
+.liked {
+  color: #f50057;
+}
+
 body {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 .app {
   display: flex;
   justify-content: center;
   background-color: #dcd8cf;
-  height: 100vh;
   box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */

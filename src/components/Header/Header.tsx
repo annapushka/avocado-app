@@ -9,7 +9,8 @@ import {
 import HomeIcon from '../../img/home.png';
 import AddIcon from '../../img/add.png';
 
-import SearchBox from '../SearchBox/SearchBox';
+import { Switch } from '@material-ui/core';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const Header: React.FC = () => {
     return (
@@ -28,6 +29,10 @@ const Header: React.FC = () => {
                     </li>
                 </ul>
             </nav>
+            <div className="header__favorite-filter">
+                <Switch />
+                <FavoriteIcon className='like header__favorite-like' />
+            </div>
         </div>
     );
 };
