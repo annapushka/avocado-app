@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { useActions } from '../../hooks/useActions';
 
 
-const { filterRecipe } = useActions();
-
-
 const SearchBox: React.FC = () => {
+
+    const { filterRecipe } = useActions();
 
     //search
     const [saerchRecipe, setSearchRecipe] = useState('');
