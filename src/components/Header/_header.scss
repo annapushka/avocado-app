@@ -41,7 +41,7 @@
     }
 
     &__icon {
-        height: 1.8rem;
+        height: 1.5rem;
         transition: 0.5s;
         cursor: pointer;
 
@@ -49,4 +49,8 @@
             transform: scale(1.1);
         }
     }
+}
+
+.invisible {
+    visibility: hidden;
 }
