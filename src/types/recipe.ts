@@ -16,6 +16,7 @@ export interface RecipeState {
     loading: boolean;
     error: null | string;
     filter: string;
+    likeFilter: boolean;
 }
 
 export enum RecipeActionTypes {
@@ -25,6 +26,7 @@ export enum RecipeActionTypes {
     POST_RECIPE = "POST_RECIPE",
     POST_RECIPE_ERROR = "POST_RECIPE_ERROR",
     FILTER = "FILTER",
+    SET_LIKE_FITER = "SET_LIKE_FITER",
 }
 
 interface FetchRecipesAction {
@@ -55,9 +57,15 @@ interface FilterAction {
     payload: string;
 }
 
+interface SetLikeFilterAction {
+    type: RecipeActionTypes.SET_LIKE_FITER;
+    payload: boolean;
+}
+
 export type RecipeAction = FetchRecipesAction
     | FetchRecipesSuccessAction
     | FetchRecipesErrorAction
     | PostRecipeAction
     | PostRecipeErrorAction
-    | FilterAction;
+    | FilterAction
+    | SetLikeFilterAction;

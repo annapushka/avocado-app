@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import RecipeBox from '../RecipeBox/RecipeBox';
 import Breakfast from '../../img/breakfast.jpg';
 import Lunch from '../../img/lunch.jpg';

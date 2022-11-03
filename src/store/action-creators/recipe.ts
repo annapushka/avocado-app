@@ -45,3 +45,12 @@ export const filterRecipe = (word: string) => {
         });
     }
 }
+
+export const setLikeFilter = (likeFilter: boolean) => {
+    return (dispatch: Dispatch<RecipeAction>) => {
+        dispatch({
+            type: RecipeActionTypes.SET_LIKE_FITER,
+            payload: likeFilter
+        })
+    }
+}

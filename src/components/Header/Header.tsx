@@ -9,16 +9,26 @@ import AddIcon from '../../img/add.png';
 
 import { Switch } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import { useActions } from '../../hooks/useActions';
 
 
 const classNames = require('classnames');
 
 const Header: React.FC = () => {
+    const { setLikeFilter } = useActions();
     const location = useLocation();
     const [recipeList, setRecipeList] = useState(true);
+    const [likeFilter, setFilter] = useState(false);
+
 
     useEffect(() => {
-        (location.pathname === "/breakfast" || location.pathname === "/lunch" || location.pathname === "/supper") ? setRecipeList(true) : setRecipeList(false)
+        setLikeFilter(likeFilter)
+    }, [likeFilter]);
+
+    useEffect(() => {
+        (location.pathname === "/breakfast"
+            || location.pathname === "/lunch"
+            || location.pathname === "/supper") ? setRecipeList(true) : setRecipeList(false)
     }, [location.pathname]);
 
 
@@ -26,6 +36,8 @@ const Header: React.FC = () => {
         'header__favorite-filter invisible': !recipeList,
         'header__favorite-filter': recipeList,
     });
+
+    const hendlerClickFilter = () => setFilter(prevState => !prevState);
 
 
     return (
@@ -45,7 +57,7 @@ const Header: React.FC = () => {
                 </ul>
             </nav>
             <div className={visible}>
-                <Switch />
+                <Switch onClick={hendlerClickFilter} />
                 <FavoriteIcon className='like header__favorite-like' />
             </div>
         </div>

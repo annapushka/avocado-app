@@ -14,6 +14,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { RecipeTypes } from '../../types/recipe';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useActions } from '../../hooks/useActions';
 
 const moment = require('moment');
 const classNames = require('classnames');
@@ -46,6 +48,8 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function RecipeReviewCard(props: RecipeTypes) {
 
     const { img, title, calories, ingredients, steps, time, meal, id, date, author } = props;
+    const { likeFilter } = useTypedSelector(state => state.recipe)
+
 
     const formatedDate = moment(date).format('LL').toString();
     const titleToUpperCase = title[0].toUpperCase() + title.slice(1);
@@ -58,6 +62,11 @@ export default function RecipeReviewCard(props: RecipeTypes) {
         'liked': favorite,
     });
 
+    let unshown = classNames({
+        'invisible': likeFilter && !favorite,
+        '': !likeFilter,
+    });
+
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
@@ -67,60 +76,62 @@ export default function RecipeReviewCard(props: RecipeTypes) {
     };
 
     return (
-        <Card className={classes.root}>
-            <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                        {autorFirstLetter}
-                    </Avatar>
-                }
-                title={titleToUpperCase}
-                subheader={formatedDate}
-            />
-            <CardMedia
-                className={classes.media}
-                image={img}
-                title={title}
-            />
-            <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    Время приготовления: {time} мин<br />
-                    Количество калорий: {calories} ккал
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton
-                    aria-label="add to favorites"
-                    onClick={handlerFavoriteClick}
-                >
-                    <FavoriteIcon className={favoriteClass} />
-                </IconButton>
-                <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
-                <IconButton
-                    className={clsx(classes.expand, {
-                        [classes.expandOpen]: expanded,
-                    })}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                >
-                    <ExpandMoreIcon />
-                </IconButton>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <div className={unshown}>
+            <Card className={classes.root}>
+                <CardHeader
+                    avatar={
+                        <Avatar aria-label="recipe" className={classes.avatar}>
+                            {autorFirstLetter}
+                        </Avatar>
+                    }
+                    title={titleToUpperCase}
+                    subheader={formatedDate}
+                />
+                <CardMedia
+                    className={classes.media}
+                    image={img}
+                    title={title}
+                />
                 <CardContent>
-                    <Typography paragraph color="textSecondary">ИНГРЕДИЕНТЫ</Typography>
-                    <Typography paragraph variant="body2" color="textSecondary" component="p">
-                        {ingredients}
-                    </Typography>
-                    <Typography paragraph>ПОШАГОВЫЙ РЕЦЕПТ ПРИГОТОВЛЕНИЯ</Typography>
-                    <Typography paragraph>
-                        {steps}
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Время приготовления: {time} мин<br />
+                        Количество калорий: {calories} ккал
                     </Typography>
                 </CardContent>
-            </Collapse>
-        </Card>
-    );
+                <CardActions disableSpacing>
+                    <IconButton
+                        aria-label="add to favorites"
+                        onClick={handlerFavoriteClick}
+                    >
+                        <FavoriteIcon className={favoriteClass} />
+                    </IconButton>
+                    <IconButton aria-label="share">
+                        <ShareIcon />
+                    </IconButton>
+                    <IconButton
+                        className={clsx(classes.expand, {
+                            [classes.expandOpen]: expanded,
+                        })}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                    >
+                        <ExpandMoreIcon />
+                    </IconButton>
+                </CardActions>
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                    <CardContent>
+                        <Typography paragraph color="textSecondary">ИНГРЕДИЕНТЫ</Typography>
+                        <Typography paragraph variant="body2" color="textSecondary" component="p">
+                            {ingredients}
+                        </Typography>
+                        <Typography paragraph>ПОШАГОВЫЙ РЕЦЕПТ ПРИГОТОВЛЕНИЯ</Typography>
+                        <Typography paragraph>
+                            {steps}
+                        </Typography>
+                    </CardContent>
+                </Collapse>
+            </Card>
+        </div>
+    )
 }

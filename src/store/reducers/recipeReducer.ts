@@ -5,18 +5,21 @@ const initialState: RecipeState = {
     loading: false,
     error: null,
     filter: '',
+    likeFilter: false,
 }
 
 export const recipeReducer = (state = initialState, action: RecipeAction): RecipeState => {
     switch (action.type) {
         case RecipeActionTypes.FETCH_RECIPES:
-            return { loading: true, error: null, recipes: [], filter: '' }
+            return { ...state, loading: true }
         case RecipeActionTypes.FETCH_RECIPES_SUCCESS:
-            return { loading: false, error: null, recipes: action.payload, filter: '' }
+            return { ...state, recipes: action.payload, loading: false }
         case RecipeActionTypes.FETCH_RECIPES_ERROR:
-            return { loading: false, error: action.payload, recipes: [], filter: '' }
+            return { ...state, error: action.payload, loading: false }
         case RecipeActionTypes.FILTER:
             return { ...state, filter: action.payload }
+        case RecipeActionTypes.SET_LIKE_FITER:
+            return { ...state, likeFilter: action.payload }
         default:
             return state
     }
