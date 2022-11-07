@@ -2,10 +2,10 @@ export interface RecipeTypes {
     id?: string;
     img: string;
     title: string;
-    time: number;
+    time: number | string;
     meal: string;
     ingredients: string;
-    calories: number;
+    calories: number | string;
     steps: string;
     date: Date;
     author: string;
