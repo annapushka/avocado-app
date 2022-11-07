@@ -219,5 +219,8 @@ body {
   justify-content: center;
   background-color: #dcd8cf;
   box-sizing: border-box;
-  height: 100vh;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: 100vh;
 }/*# sourceMappingURL=style.css.map */

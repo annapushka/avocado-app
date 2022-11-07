@@ -26,5 +26,6 @@ body {
     justify-content: center;
     background-color: $lightGray;
     box-sizing: border-box;
-    height: 100vh;
+    height: max-content;
+    min-height: 100vh;
 }

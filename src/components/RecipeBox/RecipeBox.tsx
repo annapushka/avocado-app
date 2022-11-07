@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             minWidth: '30%',
+            maxHeight: '50vh',
         },
         media: {
             paddingTop: '56.25%', // 16:9
