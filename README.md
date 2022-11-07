@@ -18,7 +18,7 @@ In progress...
 
 ## Result
 
-[Сlick me](https://annapushka.github.io/quote-cards)<br>
+[Сlick me](https://annapushka.github.io/avocado_app)<br>
 <p><img src="src/img/result1.jpg" alt="result" width="400px"/>
 <img src="src/img/result2.jpg" alt="result" width="400px"/>
 <img src="src/img/result3.jpg" alt="result" width="400px"/></p>
