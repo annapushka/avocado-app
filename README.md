@@ -16,11 +16,12 @@ In progress...
 <img src="src/img/sass.png" alt="sass" width="90rem"/>
 </p>
 
-<!-- ## Result
+## Result
 
 [Сlick me](https://annapushka.github.io/quote-cards)<br>
-<p><img src="src/img/result1.jpg" alt="card-result" width="400px"/>
-<img src="src/img/result2.jpg" alt="card-result" width="400px"/></p> -->
+<p><img src="src/img/result1.jpg" alt="result" width="400px"/>
+<img src="src/img/result2.jpg" alt="result" width="400px"/>
+<img src="src/img/result3.jpg" alt="result" width="400px"/></p>
 
 ## Author
 
