@@ -11,8 +11,25 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ShareIcon from '@material-ui/icons/Share';
+import { useLocation } from 'react-router';
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    TelegramShareButton,
+    TwitterShareButton,
+    VKShareButton,
+    WhatsappShareButton,
+} from "react-share";
+import {
+    EmailIcon,
+    FacebookIcon,
+    TelegramIcon,
+    TwitterIcon,
+    VKIcon,
+    WhatsappIcon,
+} from "react-share";
 import { RecipeTypes } from '../../types/recipe';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
@@ -47,8 +64,11 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function RecipeReviewCard(props: RecipeTypes) {
 
     const { img, title, calories, ingredients, steps, time, date, author } = props;
-    const { likeFilter } = useTypedSelector(state => state.recipe)
+    const { likeFilter } = useTypedSelector(state => state.recipe);
 
+    const location = useLocation();
+    const shareLink = `https://annapushka.github.io/avocado_app/#${location.pathname}`
+    console.log(shareLink)
 
     const formatedDate = moment(date).format('LL').toString();
     const titleToUpperCase = title[0].toUpperCase() + title.slice(1);
@@ -101,7 +121,13 @@ export default function RecipeReviewCard(props: RecipeTypes) {
                     <FavoriteIcon className={favoriteClass} />
                 </IconButton>
                 <IconButton aria-label="share">
-                    <ShareIcon />
+                    <WhatsappShareButton
+                        url={shareLink}
+                        title={title}
+                        separator=":: "
+                    >
+                        <ShareIcon />
+                    </WhatsappShareButton>
                 </IconButton>
                 <IconButton
                     className={clsx(classes.expand, {
