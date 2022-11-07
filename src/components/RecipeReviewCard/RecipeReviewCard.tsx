@@ -124,7 +124,8 @@ export default function RecipeReviewCard(props: RecipeTypes) {
                     <WhatsappShareButton
                         url={shareLink}
                         title={title}
-                        separator=":: "
+                        separator=": "
+                        className="shareWrapper"
                     >
                         <ShareIcon />
                     </WhatsappShareButton>

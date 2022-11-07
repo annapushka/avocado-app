@@ -206,6 +206,14 @@
   color: #f50057;
 }
 
+.shareWrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
