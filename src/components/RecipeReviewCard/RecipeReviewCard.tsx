@@ -53,7 +53,6 @@ export default function RecipeReviewCard(props: RecipeTypes) {
 
     const location = useLocation();
     const shareLink = `https://annapushka.github.io/avocado_app/#${location.pathname}`
-    console.log(shareLink)
 
     const formatedDate = moment(date).format('LL').toString();
     const titleToUpperCase = title[0].toUpperCase() + title.slice(1);
