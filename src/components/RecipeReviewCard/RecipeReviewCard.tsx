@@ -14,22 +14,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ShareIcon from '@material-ui/icons/Share';
 import { useLocation } from 'react-router';
-import {
-    EmailShareButton,
-    FacebookShareButton,
-    TelegramShareButton,
-    TwitterShareButton,
-    VKShareButton,
-    WhatsappShareButton,
-} from "react-share";
-import {
-    EmailIcon,
-    FacebookIcon,
-    TelegramIcon,
-    TwitterIcon,
-    VKIcon,
-    WhatsappIcon,
-} from "react-share";
+import { WhatsappShareButton } from "react-share";
 import { RecipeTypes } from '../../types/recipe';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
