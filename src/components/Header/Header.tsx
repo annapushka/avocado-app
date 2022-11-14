@@ -12,7 +12,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import { useActions } from '../../hooks/useActions';
 
 
-const classNames = require('classnames');
+import classNames from 'classnames';
 
 const Header: React.FC = () => {
     const { setLikeFilter } = useActions();
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
     }, [location.pathname]);
 
 
-    let visible = classNames({
+    const visible = classNames({
         'header__favorite-filter invisible': !recipeList,
         'header__favorite-filter': recipeList,
     });

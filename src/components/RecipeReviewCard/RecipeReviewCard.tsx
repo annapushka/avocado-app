@@ -18,8 +18,8 @@ import { WhatsappShareButton } from "react-share";
 import { RecipeTypes } from '../../types/recipe';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
-const moment = require('moment');
-const classNames = require('classnames');
+import classNames from 'classnames';
+import moment from 'moment';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -61,7 +61,7 @@ export default function RecipeReviewCard(props: RecipeTypes) {
     const [expanded, setExpanded] = useState(false);
     const [favorite, setFavorite] = useState(false);
 
-    let favoriteClass = classNames({
+    const favoriteClass = classNames({
         'liked': favorite,
     });
 
