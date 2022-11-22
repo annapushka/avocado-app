@@ -17,10 +17,10 @@ const Home: React.FC = () => {
             <Link to='/breakfast'>
                 <RecipeBox meal='Завтрак' img={Breakfast} value='breakfast' />
             </Link>
-            <Link to='lunch'>
+            <Link to='/lunch'>
                 <RecipeBox meal='Обед' img={Lunch} value='lunch' />
             </Link>
-            <Link to='supper'>
+            <Link to='/supper'>
                 <RecipeBox meal='Ужин' img={Supper} value='supper' />
             </Link>
         </div >
