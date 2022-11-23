@@ -8,21 +8,19 @@ import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 
-
-describe('Start app test', () => {
-  const initialState = { output: 10 };
+describe('app tests', () => {
+  const initialState = {};
   const middlewares = [thunk]
   const mockStore = configureMockStore(middlewares)
   let store;
 
-  it('Завтрак"', () => {
+  test('render home page', () => {
     store = mockStore(initialState);
     const { getByText } = render(
       <Provider store={store}>
         <App />
       </Provider>
     );
-
     expect(getByText('Завтрак')).not.toBeNull();
   });
 });
