@@ -25,6 +25,11 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             width: 300,
+            height: '100%',
+            minHeight: 400,
+        },
+        header: {
+            height: 50,
         },
         media: {
             height: 0,
@@ -85,6 +90,7 @@ export default function RecipeReviewCard(props: RecipeTypes) {
                 }
                 title={titleToUpperCase}
                 subheader={formatedDate}
+                className={classes.header}
             />
             <CardMedia
                 className={classes.media}
