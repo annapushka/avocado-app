@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/avocado_app/static/css/main.fefcbf4a.css",
-    "main.js": "/avocado_app/static/js/main.33d924c2.js",
-    "static/media/breakfast.jpg": "/avocado_app/static/media/breakfast.3d54d8fc24ea110b9424.jpg",
-    "static/media/lunch.jpg": "/avocado_app/static/media/lunch.13c67a10afa1e139bd90.jpg",
-    "static/media/supper.jpg": "/avocado_app/static/media/supper.70c6169c159b012080a6.jpg",
+    "main.js": "/avocado_app/static/js/main.23beb94c.js",
+    "static/media/breakfast.jpg": "/avocado_app/static/media/breakfast.bcaafccb1df188de383a.jpg",
+    "static/media/supper.jpg": "/avocado_app/static/media/supper.e464c7703d0dbc94c63a.jpg",
+    "static/media/lunch.jpg": "/avocado_app/static/media/lunch.8e22444e8b19eb5967b3.jpg",
     "static/media/error.png": "/avocado_app/static/media/error.9df5e6691215d04a1f7b.png",
     "static/media/add.png": "/avocado_app/static/media/add.7a7e86d98a4f534f4355.png",
     "static/media/home.png": "/avocado_app/static/media/home.619b4834a087607a0e8e.png",
     "index.html": "/avocado_app/index.html",
     "main.fefcbf4a.css.map": "/avocado_app/static/css/main.fefcbf4a.css.map",
-    "main.33d924c2.js.map": "/avocado_app/static/js/main.33d924c2.js.map"
+    "main.23beb94c.js.map": "/avocado_app/static/js/main.23beb94c.js.map"
   },
   "entrypoints": [
     "static/css/main.fefcbf4a.css",
-    "static/js/main.33d924c2.js"
+    "static/js/main.23beb94c.js"
   ]
 }
